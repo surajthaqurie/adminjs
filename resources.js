@@ -74,66 +74,66 @@ const PostResourceOptions = {
     model: prisma._baseDmmf.modelMap.Post,
     client: prisma,
   },
-  options: {
-    actions: {
-      show: {
-        isAccessible: true,
-        isVisible: true,
-      },
-      list: {
-        showFilter: true,
-      },
-      delete: {
-        guard: "doYouReallyWantToDoThis",
-      },
-      myCustomAction: {
-        actionType: "record",
-        component: Components.MyCustomAction,
-        handler: (request, response, context) => {
-          const { record, currentAdmin } = context;
-          console.log(currentAdmin);
-          return {
-            record: record.toJSON(currentAdmin),
-            msg: "Hello Worlds!!!!!!",
-          };
-        },
-        // showInDrawer: true,
-        parent: "More",
-      },
-      myOtherCustomAction: {
-        actionType: "record",
-        component: false,
-        handler: (request, response, context) => {
-          const { record, currentAdmin } = context;
-          console.log(currentAdmin);
-          return {
-            record: record.toJSON(currentAdmin),
-            msg: "Hello Worlds!!!!!!",
-          };
-        },
-        // showInDrawer: true,
-        parent: "More",
-      },
-    },
-    properties: {
-      someText: {
-        type: "string",
-        components: {
-          edit: Components.MyInput, // this is our custom component
-        },
-      },
-      someText: {
-        type: "string",
-        components: {
-          list: Components.MyRandomPicture,
-          show: Components.MyRandomPicture,
-        },
-      },
-      content: {
-        description: "userLinksHint",
-      },
-    },
-  },
+  // options: {
+  //   actions: {
+  //     show: {
+  //       isAccessible: true,
+  //       isVisible: true,
+  //     },
+  //     list: {
+  //       showFilter: true,
+  //     },
+  //     delete: {
+  //       guard: "doYouReallyWantToDoThis",
+  //     },
+  //     myCustomAction: {
+  //       actionType: "record",
+  //       component: Components.MyCustomAction,
+  //       handler: (request, response, context) => {
+  //         const { record, currentAdmin } = context;
+  //         console.log(currentAdmin);
+  //         return {
+  //           record: record.toJSON(currentAdmin),
+  //           msg: "Hello Worlds!!!!!!",
+  //         };
+  //       },
+  //       // showInDrawer: true,
+  //       parent: "More",
+  //     },
+  //     myOtherCustomAction: {
+  //       actionType: "record",
+  //       component: false,
+  //       handler: (request, response, context) => {
+  //         const { record, currentAdmin } = context;
+  //         console.log(currentAdmin);
+  //         return {
+  //           record: record.toJSON(currentAdmin),
+  //           msg: "Hello Worlds!!!!!!",
+  //         };
+  //       },
+  //       // showInDrawer: true,
+  //       parent: "More",
+  //     },
+  //   },
+  //   properties: {
+  //     someText: {
+  //       type: "string",
+  //       components: {
+  //         edit: Components.MyInput, // this is our custom component
+  //       },
+  //     },
+  //     someText: {
+  //       type: "string",
+  //       components: {
+  //         list: Components.MyRandomPicture,
+  //         show: Components.MyRandomPicture,
+  //       },
+  //     },
+  //     content: {
+  //       description: "userLinksHint",
+  //     },
+  //   },
+  // },
 };
 
 const UserResourceOptions = {
@@ -142,37 +142,37 @@ const UserResourceOptions = {
     model: prisma._baseDmmf.modelMap.Users,
     client: prisma,
   },
-  options: {
-    // navigation: usersNavigation,
-    actions: {
-      // list: {
-      //   before: [customBefore],
-      //   after: [customAfter],
-      // },
-      new: {
-        before: [validateForm],
-      },
-    },
-    properties: {
-      email: {
-        availableValues: [
-          { value: "male", label: "Male" },
-          { value: "female", label: "Female" },
-          { value: "other", label: "Other" },
-          { value: "notSay", label: "Rather not say" },
-        ],
-      },
-      name: {
-        type: "password",
-      },
-      phone: {
-        components: {
-          edit: Components.FileUploadInput,
-          new: Components.FileUploadInput,
-        },
-      },
-    },
-  },
+  // options: {
+  //   // navigation: usersNavigation,
+  //   actions: {
+  //     // list: {
+  //     //   before: [customBefore],
+  //     //   after: [customAfter],
+  //     // },
+  //     new: {
+  //       before: [validateForm],
+  //     },
+  //   },
+  //   properties: {
+  //     email: {
+  //       availableValues: [
+  //         { value: "male", label: "Male" },
+  //         { value: "female", label: "Female" },
+  //         { value: "other", label: "Other" },
+  //         { value: "notSay", label: "Rather not say" },
+  //       ],
+  //     },
+  //     name: {
+  //       type: "password",
+  //     },
+  //     phone: {
+  //       components: {
+  //         edit: Components.FileUploadInput,
+  //         new: Components.FileUploadInput,
+  //       },
+  //     },
+  //   },
+  // },
 };
 
 exports.AdminJResourceConfig = {
